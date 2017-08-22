@@ -1,0 +1,30 @@
+<h2>Order Pizza</h2>
+<form class="order-form" id="order-form" action="/pizzas" method="POST">
+  <table class="order-details">
+    <tr>
+      <th><label for="first-name">First Name</label></th>
+      <td><input id="first-name" type="text" name="first_name"></td>
+    </tr>
+    <tr>
+      <th><label for="last-name">Last Name</label></th>
+      <td><input id="last-name" type="text" name="last_name"></td>
+    </tr>
+    <tr>
+      <th><label for="pizza-select">Topping</label></th>
+      <td><select id="pizza-select" name="topping">
+        <% @toppings.each do |topping| %>
+          <option value="<%= topping %>"><%= topping %></option>
+        <% end %>
+      </select></td>
+    </tr>
+    <tr>
+      <th><label for="quantity">Quantity</label></th>
+      <td><input id="quantity" type="number" name="quantity"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="edit-button centre">
+        <a class="button" href="#" onclick="document.getElementById('order-form').submit();">Order Pizza</a>
+      </td>
+    </tr>
+  </table>
+</form>

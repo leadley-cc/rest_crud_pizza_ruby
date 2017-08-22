@@ -1,0 +1,17 @@
+<h2>All Pizzas</h2>
+<table class="pizza-index">
+  <tr>
+    <th>Name</th>
+    <th>Topping</th>
+    <th>Quantity</th>
+    <th></th>
+  </tr>
+  <% @pizzas.each do |pizza| %>
+  <tr>
+    <td><%= pizza.pretty_name %> </td>
+    <td><%= pizza.topping %> </td>
+    <td><%= pizza.quantity %> </td>
+    <td><a class="button" href="/pizzas/<%= pizza.id %>">Show order</a></td>
+  </tr>
+  <% end %>
+</table>

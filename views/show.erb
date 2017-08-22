@@ -1,0 +1,34 @@
+<h2>Your Order</h2>
+<table class="order-details">
+  <tr>
+    <th>First Name</th>
+    <td><%= @pizza.first_name %></td>
+  </tr>
+  <tr>
+    <th>Last Name</th>
+    <td><%= @pizza.last_name %></td>
+  </tr>
+  <tr>
+    <th>Topping</th>
+    <td><%= @pizza.topping %></td>
+  </tr>
+  <tr>
+    <th>Quantity</th>
+    <td><%= @pizza.quantity %></td>
+  </tr>
+  <tr>
+    <th>Total price</th>
+    <td><%= @pizza.total %></td>
+  </tr>
+  <tr>
+    <td class="delete-button">
+      <form class="delete-form" id="delete-form" method="post" action="/pizzas/<%= @pizza.id %>/delete">
+        <a class="button" href="#" onclick="document.getElementById('delete-form').submit();">Delete Order</a>
+        <input type="hidden" value="Delete Order">
+      </form>
+    </td>
+    <td class="edit-button">
+      <a class="button" href="/pizzas/<%= @pizza.id %>/edit">Edit Order</a>
+    </td>
+  </tr>
+</table>
